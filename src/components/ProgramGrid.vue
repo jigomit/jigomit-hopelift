@@ -28,6 +28,7 @@ const props = defineProps({
           :height="400"
           :lazy="index >= 3"
           :priority="index < 3"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 20vw"
           img-class="program-card__image"
         />
         <div class="program-body">

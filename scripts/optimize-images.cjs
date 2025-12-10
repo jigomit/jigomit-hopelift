@@ -19,7 +19,7 @@ const OUTPUT_DIR = path.join(__dirname, '../public/images');
 const RESPONSIVE_SIZES = [400, 800, 1200];
 const QUALITY = {
   webp: 80,
-  avif: 75,
+  avif: 60, // Reduced from 75 for better compression with imperceptible quality loss
 };
 
 // Colors for console output

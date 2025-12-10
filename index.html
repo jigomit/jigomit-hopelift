@@ -10,18 +10,17 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://images.pexels.com" />
-    <link rel="preconnect" href="https://images.pexels.com" crossorigin />
 
-    <!-- Font Loading - Non-blocking with preload -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <!-- Font Loading - Non-blocking with display=optional to prevent CLS -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=optional" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=optional" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=optional" />
     </noscript>
 
-    <!-- LCP Image Preload for fastest paint -->
-    <link rel="preload" as="image" href="https://images.pexels.com/photos/4959222/pexels-photo-4959222.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=crop&q=85" fetchpriority="high" />
+    <!-- LCP Image Preload for fastest paint - Local optimized AVIF -->
+    <link rel="preload" as="image" href="/images/volunteers-meals.avif" type="image/avif" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/volunteers-meals.webp" type="image/webp" fetchpriority="high" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />

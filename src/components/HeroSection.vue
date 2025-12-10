@@ -14,22 +14,22 @@ const heroImages = [
   {
     src: '/images/volunteers-meals.jpg',
     alt: 'Volunteers distributing hot meals to families',
-    priority: true, // LCP image
+    priority: true, // All hero gallery images are above fold in 2x2 grid
   },
   {
     src: '/images/field-team-student.jpg',
     alt: 'HopeLift field team guiding young student in class',
-    priority: false,
+    priority: true,
   },
   {
     src: '/images/agriculture-harvest.jpg',
     alt: 'Community agriculture support and harvest',
-    priority: false,
+    priority: true,
   },
   {
     src: '/images/health-workers-care.jpg',
     alt: 'Health workers providing medical care',
-    priority: false,
+    priority: true,
   },
 ]
 </script>

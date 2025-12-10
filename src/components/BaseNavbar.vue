@@ -14,10 +14,7 @@ const navLinks = [
 const menuOpen = ref(false)
 const isSolid = ref(false)
 const route = useRoute()
-
-const handleScroll = () => {
-  isSolid.value = window.scrollY > 10
-}
+let observer = null
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -28,12 +25,32 @@ const closeMenu = () => {
 }
 
 onMounted(() => {
-  handleScroll()
-  window.addEventListener('scroll', handleScroll)
+  // Use IntersectionObserver to detect scroll past 10px threshold
+  // This avoids forced reflows from reading window.scrollY
+  const sentinel = document.getElementById('navbar-scroll-sentinel')
+
+  if (sentinel && 'IntersectionObserver' in window) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // When sentinel is NOT intersecting, we've scrolled past it
+          isSolid.value = !entry.isIntersecting
+        })
+      },
+      {
+        threshold: 0,
+        rootMargin: '0px',
+      }
+    )
+
+    observer.observe(sentinel)
+  }
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
+  if (observer) {
+    observer.disconnect()
+  }
 })
 
 watch(

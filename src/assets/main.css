@@ -154,6 +154,8 @@ p {
   filter: blur(90px);
   opacity: 0.6;
   pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .view-shell {
@@ -1402,14 +1404,19 @@ p {
     linear-gradient(135deg, #03140f, #062f21 60%, #0f4332);
   color: rgba(255, 255, 255, 0.92);
   padding: 4.5rem 0 2.5rem;
-  min-height: 450px;
-  contain: layout;
+  min-height: 520px;
+  contain: layout style;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2.5rem;
+}
+
+.footer-grid > div {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 250px;
 }
 
 .footer a {
@@ -4374,9 +4381,9 @@ img {
 
 /* Reserve space for footer - prevents CLS */
 .footer {
-  min-height: 450px;
+  min-height: 520px;
   content-visibility: auto;
-  contain-intrinsic-size: auto 450px;
+  contain-intrinsic-size: auto 520px;
 }
 
 /* Content visibility for better rendering performance */

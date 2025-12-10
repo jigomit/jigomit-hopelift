@@ -36,7 +36,7 @@ const props = defineProps({
   // Sizes attribute for responsive images
   sizes: {
     type: String,
-    default: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
+    default: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw'
   },
   // Priority loading for LCP images
   priority: {

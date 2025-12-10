@@ -24,7 +24,7 @@ const currentYear = new Date().getFullYear()
       <div class="footer-grid">
         <div>
           <RouterLink to="/" class="brand footer-brand">
-            <img src="/poverty-alleviation-logo.svg" alt="HopeLift Foundation logo" class="brand-logo" />
+            <img src="/poverty-alleviation-logo.svg" alt="HopeLift Foundation logo" class="brand-logo" width="48" height="48" />
             <span>
               <strong class="brand-name">HopeLift Foundation</strong>
               <small class="brand-subtitle">Social Impact Network</small>

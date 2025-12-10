@@ -2,10 +2,39 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import viteCompression from 'vite-plugin-compression'
 
+// Custom plugin to inject CSS preload for parallel loading
+function cssPreloadPlugin() {
+  return {
+    name: 'css-preload-plugin',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, { bundle }) {
+        if (!bundle) return html
+
+        // Find CSS files in the bundle
+        const cssFiles = Object.keys(bundle).filter(file =>
+          file.startsWith('assets/') && file.endsWith('.css')
+        )
+
+        if (cssFiles.length === 0) return html
+
+        // Create preload links for CSS files
+        const preloadLinks = cssFiles
+          .map(file => `    <link rel="preload" as="style" href="/${file}" />`)
+          .join('\n')
+
+        // Inject before the closing </head> tag (before the inline style closes)
+        return html.replace('</style>', `</style>\n${preloadLinks}`)
+      }
+    }
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    cssPreloadPlugin(), // Add CSS preload for parallel loading
     // Gzip compression
     viteCompression({
       verbose: true,
