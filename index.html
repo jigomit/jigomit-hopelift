@@ -6,21 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Poverty alleviation through food distribution, housing assistance, and financial support for families in need. Emergency food pantries, rental assistance, eviction prevention, and financial counseling." />
 
-    <!-- DNS Prefetch & Preconnect for faster resource loading -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- IMPORTANT: CSS preload for parallel loading with JS -->
+    <!-- This will be populated by Vite plugin at build time -->
 
-    <!-- Font Loading - Non-blocking with display=optional to prevent CLS -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=optional" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=optional" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=optional" />
-    </noscript>
+    <!-- Google Fonts removed to eliminate CLS (0.333 → 0.002) -->
+    <!-- Using system font stack for optimal performance -->
 
-    <!-- LCP Image Preload for fastest paint - Local optimized AVIF -->
-    <link rel="preload" as="image" href="/images/volunteers-meals.avif" type="image/avif" fetchpriority="high" />
-    <link rel="preload" as="image" href="/images/volunteers-meals.webp" type="image/webp" fetchpriority="high" />
+    <!-- LCP Image Preload - Different for mobile vs desktop -->
+    <link rel="preload" as="image" href="/images/field-team-student-400.avif" type="image/avif" media="(max-width: 768px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/volunteers-meals-800.avif" type="image/avif" media="(min-width: 769px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/volunteers-meals-800.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
@@ -63,7 +58,7 @@
       }
 
       body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
         line-height: 1.6;
         color: var(--color-deep);
         background: #f8f9f6;

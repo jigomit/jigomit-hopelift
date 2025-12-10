@@ -72,6 +72,7 @@ const heroImages = [
           :height="600"
           :priority="image.priority"
           :lazy="false"
+          sizes="(max-width: 768px) 100vw, 25vw"
           img-class="hero-gallery__card"
         />
         <div class="hero-badge">

@@ -18,8 +18,14 @@ const SOURCE_DIR = path.join(__dirname, '../src/assets/programs');
 const OUTPUT_DIR = path.join(__dirname, '../public/images');
 const RESPONSIVE_SIZES = [400, 800, 1200];
 const QUALITY = {
-  webp: 80,
-  avif: 60, // Reduced from 75 for better compression with imperceptible quality loss
+  webp: {
+    small: 75,   // 400w, 800w - mobile/tablet
+    large: 80,   // 1200w, full - desktop
+  },
+  avif: {
+    small: 50,   // 400w, 800w - aggressive compression for mobile
+    large: 60,   // 1200w, full - balanced for desktop
+  },
 };
 
 // Colors for console output
@@ -76,7 +82,7 @@ async function processImages() {
       // Full size WebP
       const webpPath = path.join(OUTPUT_DIR, `${baseName}.webp`);
       await sharp(sourcePath)
-        .webp({ quality: QUALITY.webp })
+        .webp({ quality: QUALITY.webp.large })
         .toFile(webpPath);
       const webpSize = fs.statSync(webpPath).size;
       totalWebPSize += webpSize;
@@ -85,9 +91,10 @@ async function processImages() {
       // Responsive WebP sizes
       for (const size of RESPONSIVE_SIZES) {
         const responsivePath = path.join(OUTPUT_DIR, `${baseName}-${size}.webp`);
+        const quality = size <= 800 ? QUALITY.webp.small : QUALITY.webp.large;
         await sharp(sourcePath)
           .resize(size, null, { withoutEnlargement: true })
-          .webp({ quality: QUALITY.webp })
+          .webp({ quality })
           .toFile(responsivePath);
         console.log(`    ✓ ${baseName}-${size}.webp (${(fs.statSync(responsivePath).size / 1024).toFixed(2)} KB)`);
       }
@@ -98,7 +105,7 @@ async function processImages() {
       // Full size AVIF
       const avifPath = path.join(OUTPUT_DIR, `${baseName}.avif`);
       await sharp(sourcePath)
-        .avif({ quality: QUALITY.avif, effort: 4 })
+        .avif({ quality: QUALITY.avif.large, effort: 4 })
         .toFile(avifPath);
       const avifSize = fs.statSync(avifPath).size;
       totalAvifSize += avifSize;
@@ -107,9 +114,10 @@ async function processImages() {
       // Responsive AVIF sizes
       for (const size of RESPONSIVE_SIZES) {
         const responsivePath = path.join(OUTPUT_DIR, `${baseName}-${size}.avif`);
+        const quality = size <= 800 ? QUALITY.avif.small : QUALITY.avif.large;
         await sharp(sourcePath)
           .resize(size, null, { withoutEnlargement: true })
-          .avif({ quality: QUALITY.avif, effort: 4 })
+          .avif({ quality, effort: 4 })
           .toFile(responsivePath);
         console.log(`    ✓ ${baseName}-${size}.avif (${(fs.statSync(responsivePath).size / 1024).toFixed(2)} KB)`);
       }

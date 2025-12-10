@@ -23,8 +23,8 @@ function cssPreloadPlugin() {
           .map(file => `    <link rel="preload" as="style" href="/${file}" />`)
           .join('\n')
 
-        // Inject before the closing </head> tag (before the inline style closes)
-        return html.replace('</style>', `</style>\n${preloadLinks}`)
+        // Inject right after the CSS preload comment (early in <head>)
+        return html.replace('<!-- This will be populated by Vite plugin at build time -->', preloadLinks)
       }
     }
   }

@@ -87,14 +87,14 @@ const basePath = computed(() => getImagePath(props.src))
 const webpSrcSet = computed(() => {
   if (!props.responsive) return ''
   const base = basePath.value
-  return `${base}-400.webp 400w, ${base}-800.webp 800w, ${base}-1200.webp 1200w, ${base}.webp 1600w`
+  return `${base}-400.webp 400w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`
 })
 
 // Generate responsive srcset for AVIF
 const avifSrcSet = computed(() => {
   if (!props.responsive) return ''
   const base = basePath.value
-  return `${base}-400.avif 400w, ${base}-800.avif 800w, ${base}-1200.avif 1200w, ${base}.avif 1600w`
+  return `${base}-400.avif 400w, ${base}-800.avif 800w, ${base}-1200.avif 1200w`
 })
 
 // Fallback JPG src
