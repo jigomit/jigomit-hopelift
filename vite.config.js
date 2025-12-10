@@ -69,16 +69,35 @@ export default defineConfig({
       }
     },
 
-    // Minification options
+    // Minification options - Enhanced for maximum compression
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.logs in production
+        drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log'] // Remove specific console methods
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+        passes: 2, // Run minification twice for better results
+        unsafe: true,
+        unsafe_comps: true,
+        unsafe_math: true,
+        unsafe_methods: true,
+        booleans: true,
+        collapse_vars: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+        loops: true,
+        reduce_vars: true,
+        toplevel: true
+      },
+      mangle: {
+        toplevel: true,
+        safari10: true
       },
       format: {
-        comments: false // Remove comments
+        comments: false,
+        ecma: 2015
       }
     }
   },

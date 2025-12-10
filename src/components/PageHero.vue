@@ -7,6 +7,14 @@ const props = defineProps({
     type: String,
     default: 'Poverty Alleviation',
   },
+  imageWidth: {
+    type: [Number, String],
+    default: 800,
+  },
+  imageHeight: {
+    type: [Number, String],
+    default: 600,
+  },
 })
 </script>
 
@@ -18,8 +26,16 @@ const props = defineProps({
         <h1 class="page-hero__title">{{ props.title }}</h1>
         <p class="page-hero__subtitle">{{ props.subtitle }}</p>
       </div>
-      <div v-if="props.image" class="page-hero__image" aria-hidden="true">
-        <img :src="props.image" :alt="props.title" loading="lazy" />
+      <div v-if="props.image" class="page-hero__image img-skeleton" aria-hidden="true">
+        <img
+          :src="props.image"
+          :alt="props.title"
+          :width="props.imageWidth"
+          :height="props.imageHeight"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
     </div>
   </section>

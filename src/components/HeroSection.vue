@@ -11,11 +11,11 @@ const heroThemes = ['Community-led', 'Open data', 'Future-forward']
 
 const heroImages = [
   {
-    url: 'https://images.pexels.com/photos/4959222/pexels-photo-4959222.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    url: 'https://images.pexels.com/photos/4959222/pexels-photo-4959222.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=crop&q=85',
     alt: 'Volunteers distributing hot meals to families',
   },
   {
-    url: 'https://images.pexels.com/photos/6647119/pexels-photo-6647119.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    url: 'https://images.pexels.com/photos/6647119/pexels-photo-6647119.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=crop&q=85',
     alt: 'HopeLift field team guiding young student in class',
   },
   {
@@ -61,9 +61,17 @@ const heroImages = [
         <div
           v-for="(image, index) in heroImages"
           :key="image.url"
-          class="hero-gallery__card"
+          class="hero-gallery__card img-skeleton"
         >
-          <img :src="image.url" :alt="image.alt" loading="lazy" />
+          <img
+            :src="image.url"
+            :alt="image.alt"
+            width="800"
+            height="600"
+            :loading="index === 0 ? 'eager' : 'eager'"
+            :fetchpriority="index === 0 ? 'high' : 'auto'"
+            :decoding="index === 0 ? 'sync' : 'async'"
+          />
         </div>
         <div class="hero-badge">
           <p class="badge-eyebrow">HopeLift today</p>

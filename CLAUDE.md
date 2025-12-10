@@ -21,6 +21,7 @@ A Vue 3 + Vite single-page application for a poverty alleviation nonprofit websi
 - **Development server**: `npm run dev` — Hot-reloading dev server for daily UI work
 - **Production build**: `npm run build` — Emit optimized bundle into `dist/`; run before proposing changes to catch regressions
 - **Preview build**: `npm run preview` — Serve the `dist/` output locally to test production routing and asset paths
+- **Build analysis**: `npm run build:analyze` — Analyze bundle size and composition
 
 ## Architecture
 
@@ -50,8 +51,8 @@ The router's `afterEach` hook updates `document.title` based on route meta with 
 - `impactStories` — 3 impact narratives aligned with food, housing, and financial support
 
 `src/data/blog.js` — Blog content system:
-- `blogPosts` — 3 detailed blog posts covering food distribution, housing assistance, and financial support with slug, title, excerpt, category, tags, author info, date, readTime, image, featured flag, and full HTML content
-- `blogCategories` — 2 categories: 'Impact Stories' and 'Program Insights'
+- `blogPosts` — 6 detailed blog posts covering food distribution, housing assistance, financial support, and community resources with slug, title, excerpt, category, tags, author info, date, readTime, image, featured flag, and full HTML content
+- `blogCategories` — 4 categories: 'All Posts', 'Impact Stories', 'Program Insights', and 'Community Resources'
 
 Both files import images from `src/assets/programs/` and `src/assets/illustrations/`. Views and components import from these modules to ensure consistency.
 
@@ -77,7 +78,7 @@ Each view in `src/views/` represents a route and composes feature components:
 - `HomeView.vue` — Assembles hero, features, all 3 programs (Food, Housing, Financial), impact stats, testimonials, and CTA sections. Includes SEO with organization schema.
 - `AboutView.vue`, `ProgramsView.vue`, `ImpactView.vue`, `DonateView.vue`, `ContactView.vue` — Interior pages with page-specific SEO
 - `ProgramDetailView.vue` — Dynamic program detail page for the 3 core programs. Fetches program by slug from route params, displays full description, objectives, impact metrics, locations. Shows 404-style message if slug not found.
-- `BlogView.vue` — Blog listing page with category filtering (Impact Stories, Program Insights) and search. Uses computed properties to filter the 3 blog posts by category and search query.
+- `BlogView.vue` — Blog listing page with category filtering (All Posts, Impact Stories, Program Insights, Community Resources) and search. Uses computed properties to filter the 6 blog posts by category and search query.
 - `BlogPostView.vue` — Individual blog post display with full HTML content rendering for posts about food distribution, housing assistance, and financial support. Includes article schema for SEO.
 
 ### Custom Directives
@@ -108,6 +109,27 @@ Global styles in `src/assets/main.css` define design tokens, typography, utility
 - `src/assets/illustrations/` — SVG illustrations for heroes, testimonials, and decorative elements
 - `src/assets/programs/` — JPG program photography for cards and detail pages
 - Images are imported directly in data modules (`content.js`, `blog.js`) and referenced by components
+
+### Build Optimization
+
+The production build (`vite.config.js`) includes aggressive optimization:
+
+**Compression**: Dual compression with Gzip and Brotli for files >1KB via `vite-plugin-compression`
+
+**Code splitting**: Manual chunks separate vendor code from application code:
+- `vue-vendor` chunk — Vue core and vue-router
+- `vueuse` chunk — @vueuse/head SEO library
+- `views` chunk — All 9 lazy-loaded view components
+
+**Minification**: Terser with aggressive settings including:
+- `drop_console: true` — Removes all console statements in production
+- `passes: 2` — Two-pass minification for maximum compression
+- `unsafe` optimizations enabled for smaller bundles
+- Top-level variable mangling
+
+**CSS optimization**: Code splitting enabled, source maps disabled in production
+
+These settings prioritize bundle size reduction. When debugging production issues, temporarily disable Terser's `drop_console` or enable source maps.
 
 ## Coding Conventions
 

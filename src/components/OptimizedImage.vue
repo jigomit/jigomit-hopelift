@@ -36,18 +36,23 @@ const props = defineProps({
   // Sizes attribute for responsive images
   sizes: {
     type: String,
-    default: '100vw'
+    default: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
   },
   // Priority loading for LCP images
   priority: {
     type: Boolean,
     default: false
+  },
+  // Enable responsive srcset
+  responsive: {
+    type: Boolean,
+    default: true
   }
 })
 
 const isLoaded = ref(false)
 const hasError = ref(false)
-const imgRef = ref(null)
+const pictureRef = ref(null)
 
 // Determine loading strategy
 const loadingAttr = computed(() => {
@@ -62,6 +67,42 @@ const decodingAttr = computed(() => {
 // Determine fetchpriority
 const fetchPriorityAttr = computed(() => {
   return props.priority ? 'high' : 'auto'
+})
+
+// Extract base filename from src (supports both old and new paths)
+const getImagePath = (src) => {
+  // If src already starts with /images/, use it directly
+  if (src.startsWith('/images/')) {
+    return src.replace(/\.(jpg|jpeg|png)$/i, '')
+  }
+
+  // Otherwise, extract filename and convert to /images/ path
+  const filename = src.split('/').pop().replace(/\.(jpg|jpeg|png)$/i, '')
+  return `/images/${filename}`
+}
+
+const basePath = computed(() => getImagePath(props.src))
+
+// Generate responsive srcset for WebP
+const webpSrcSet = computed(() => {
+  if (!props.responsive) return ''
+  const base = basePath.value
+  return `${base}-400.webp 400w, ${base}-800.webp 800w, ${base}-1200.webp 1200w, ${base}.webp 1600w`
+})
+
+// Generate responsive srcset for AVIF
+const avifSrcSet = computed(() => {
+  if (!props.responsive) return ''
+  const base = basePath.value
+  return `${base}-400.avif 400w, ${base}-800.avif 800w, ${base}-1200.avif 1200w, ${base}.avif 1600w`
+})
+
+// Fallback JPG src
+const fallbackSrc = computed(() => {
+  const base = basePath.value
+  // Get the extension from original src
+  const ext = props.src.match(/\.(jpg|jpeg|png)$/i)?.[0] || '.jpg'
+  return `${base}${ext}`
 })
 
 // Handle image load
@@ -81,11 +122,11 @@ onMounted(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && imgRef.value) {
-            const img = imgRef.value
-            if (img.dataset.src) {
+          if (entry.isIntersecting && pictureRef.value) {
+            const img = pictureRef.value.querySelector('img')
+            if (img && img.dataset.src) {
               img.src = img.dataset.src
-              observer.unobserve(img)
+              observer.unobserve(pictureRef.value)
             }
           }
         })
@@ -95,13 +136,13 @@ onMounted(() => {
       }
     )
 
-    if (imgRef.value) {
-      observer.observe(imgRef.value)
+    if (pictureRef.value) {
+      observer.observe(pictureRef.value)
     }
 
     return () => {
-      if (imgRef.value) {
-        observer.unobserve(imgRef.value)
+      if (pictureRef.value) {
+        observer.unobserve(pictureRef.value)
       }
     }
   }
@@ -116,25 +157,53 @@ onMounted(() => {
       aspectRatio: `${width} / ${height}`
     }"
   >
-    <img
-      ref="imgRef"
-      :src="src"
-      :alt="alt"
-      :width="width"
-      :height="height"
-      :loading="loadingAttr"
-      :decoding="decodingAttr"
-      :fetchpriority="fetchPriorityAttr"
-      :class="[
-        class,
-        {
-          'img-loaded': isLoaded,
-          'img-error': hasError
-        }
-      ]"
-      @load="handleLoad"
-      @error="handleError"
-    />
+    <picture ref="pictureRef">
+      <!-- AVIF format (best compression) -->
+      <source
+        v-if="responsive"
+        type="image/avif"
+        :srcset="avifSrcSet"
+        :sizes="sizes"
+      />
+      <source
+        v-else
+        type="image/avif"
+        :srcset="`${basePath}.avif`"
+      />
+
+      <!-- WebP format (good compression, wide support) -->
+      <source
+        v-if="responsive"
+        type="image/webp"
+        :srcset="webpSrcSet"
+        :sizes="sizes"
+      />
+      <source
+        v-else
+        type="image/webp"
+        :srcset="`${basePath}.webp`"
+      />
+
+      <!-- Fallback to JPG (universal support) -->
+      <img
+        :src="fallbackSrc"
+        :alt="alt"
+        :width="width"
+        :height="height"
+        :loading="loadingAttr"
+        :decoding="decodingAttr"
+        :fetchpriority="fetchPriorityAttr"
+        :class="[
+          class,
+          {
+            'img-loaded': isLoaded,
+            'img-error': hasError
+          }
+        ]"
+        @load="handleLoad"
+        @error="handleError"
+      />
+    </picture>
   </div>
 </template>
 
@@ -150,12 +219,19 @@ onMounted(() => {
   );
 }
 
+.optimized-image-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .optimized-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.3s ease;
+  display: block;
 }
 
 .optimized-image-wrapper img.img-loaded {

@@ -34,8 +34,27 @@
 
 # Plugin configuration
 [[plugins]]
-  # Optimize images automatically
+  # Lighthouse performance testing
   package = "@netlify/plugin-lighthouse"
+
+  # Lighthouse thresholds - Build will fail if scores below these values
+  [plugins.inputs.thresholds]
+    performance = 0.9  # Mobile: 90+
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.95
+    pwa = 0.0  # Not a PWA
+
+  # Audit settings
+  [plugins.inputs.audits]
+    output_path = "reports/lighthouse"
+
+  # Test both mobile and desktop
+  [[plugins.inputs.settings]]
+    preset = "desktop"
+
+  [[plugins.inputs.settings]]
+    preset = "mobile"
 
 # Headers (also defined in public/_headers for redundancy)
 [[headers]]

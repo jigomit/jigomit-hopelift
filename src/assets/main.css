@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
-
 :root {
   --color-primary: #0fbf82;
   --color-primary-dark: #04664a;
@@ -66,7 +64,7 @@ p {
 }
 
 .container {
-  width: min(1660px, 96vw);
+  width: min(1540px, 96vw);
   margin-inline: auto;
   position: relative;
   z-index: 2;
@@ -270,6 +268,7 @@ p {
   background: var(--gradient-iris);
   display: inline-block;
   animation: pulseDot 2.5s infinite ease-in-out;
+  will-change: transform, opacity;
 }
 
 @keyframes pulseDot {
@@ -649,6 +648,7 @@ p {
   box-shadow: var(--shadow-card);
   transform-style: preserve-3d;
   animation: float 10s ease-in-out infinite;
+  will-change: transform;
 }
 
 .hero-card--main {
@@ -1131,11 +1131,19 @@ p {
   flex: 1;
 }
 
+.program-card__image {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(90deg, rgba(15, 191, 130, 0.05) 0%, rgba(15, 191, 130, 0.1) 50%, rgba(15, 191, 130, 0.05) 100%);
+}
+
 .program-card img {
   height: 240px;
   width: 100%;
   object-fit: cover;
   filter: saturate(0.95);
+  display: block;
 }
 
 .program-body {
@@ -1620,6 +1628,7 @@ p {
   filter: blur(20px);
   opacity: 0.35;
   animation: pulseSpark 10s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes pulseSpark {
@@ -1666,15 +1675,20 @@ p {
   .nav-links {
     position: absolute;
     display: none;
-    inset: 80px 1rem auto;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(380px, calc(100vw - 2rem));
+    max-width: 380px;
     background: rgba(255, 255, 255, 0.98);
     flex-direction: column;
-    padding: 1.75rem;
+    padding: 1.5rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(4, 29, 22, 0.08);
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1rem;
+    z-index: 1000;
   }
 
   .nav-links.is-open {
@@ -1690,17 +1704,22 @@ p {
   }
 
   .brand-block {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
   .brand-pill {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .nav-meta {
     display: block;
+  }
+
+  .navbar {
+    padding: 0 1rem;
   }
 
   .hero-gallery {
@@ -1920,6 +1939,17 @@ p {
 
 /* General Mobile (< 640px) */
 @media (max-width: 639px) {
+  /* Hide brand pill on small screens to declutter navbar */
+  .brand-pill {
+    display: none;
+  }
+
+  /* Reduce logo size on small screens */
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
   /* Force Vertical Layout for All Image Grids */
   .hero-gallery,
   .program-grid,
@@ -3113,6 +3143,7 @@ p {
   color: var(--color-primary);
   opacity: 0.7;
   transition: all 0.35s ease;
+  will-change: transform;
 }
 
 .overlay-badge:hover .badge-arrow {
@@ -4327,6 +4358,7 @@ img {
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
+  will-change: background-position;
 }
 
 @keyframes shimmer {

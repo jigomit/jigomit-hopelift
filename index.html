@@ -13,6 +13,16 @@
     <link rel="dns-prefetch" href="https://images.pexels.com" />
     <link rel="preconnect" href="https://images.pexels.com" crossorigin />
 
+    <!-- Font Loading - Non-blocking with preload -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" />
+    </noscript>
+
+    <!-- LCP Image Preload for fastest paint -->
+    <link rel="preload" as="image" href="https://images.pexels.com/photos/4959222/pexels-photo-4959222.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=crop&q=85" fetchpriority="high" />
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="HopeLift Foundation | Poverty Alleviation Through Food, Housing & Financial Support" />
@@ -35,6 +45,117 @@
     <meta name="format-detection" content="telephone=no" />
 
     <title>HopeLift Foundation | Food Distribution, Housing & Financial Support for Families</title>
+
+    <!-- Critical CSS - Inline for immediate above-fold rendering -->
+    <style>
+      /* CSS Variables */
+      :root {
+        --color-primary: #0fbf82;
+        --color-primary-dark: #08231d;
+        --color-deep: #041d16;
+        --color-muted: #6b7280;
+      }
+
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+        color: var(--color-deep);
+        background: #f8f9f6;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1540px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Navbar - Fixed height prevents CLS */
+      .navbar {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(20px);
+      }
+
+      /* Skeleton loading animation */
+      .img-skeleton {
+        background: linear-gradient(
+          90deg,
+          rgba(15, 191, 130, 0.05) 0%,
+          rgba(15, 191, 130, 0.1) 50%,
+          rgba(15, 191, 130, 0.05) 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+
+      /* Hero Gallery */
+      .hero-gallery__card {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        min-height: 220px;
+      }
+
+      .hero-gallery__card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Page Hero Image */
+      .page-hero__image {
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      .page-hero__image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Program Cards */
+      .program-card__image {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .program-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Image aspect-ratio support for CLS prevention */
+      img {
+        height: auto;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>

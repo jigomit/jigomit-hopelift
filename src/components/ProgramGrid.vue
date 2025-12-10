@@ -13,14 +13,24 @@ const props = defineProps({
 <template>
   <div class="program-grid">
     <RouterLink
-      v-for="program in props.programs"
+      v-for="(program, index) in props.programs"
       :key="program.title"
       :to="`/programs/${program.slug}`"
       class="program-card"
       v-reveal
     >
       <article>
-        <img :src="program.image" :alt="program.title" loading="lazy" />
+        <div class="program-card__image img-skeleton">
+          <img
+            :src="program.image"
+            :alt="program.title"
+            width="600"
+            height="400"
+            :loading="index < 3 ? 'eager' : 'lazy'"
+            :fetchpriority="index < 3 ? 'high' : 'auto'"
+            :decoding="index < 3 ? 'async' : 'async'"
+          />
+        </div>
         <div class="program-body">
           <div class="program-tags">
             <span v-for="tag in program.focus" :key="tag" class="tag">{{ tag }}</span>
