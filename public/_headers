@@ -48,6 +48,11 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
 
+# Preconnect to external domains for faster loading
+/
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+
 # Preload key resources for better LCP
 /
   Link: </assets/index-*.js>; rel=preload; as=script

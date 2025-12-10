@@ -11,4 +11,9 @@ const head = createHead()
 app.use(router)
 app.use(head)
 app.directive('reveal', scrollReveal)
-app.mount('#app')
+
+// Wait for router to be ready before mounting to prevent hydration mismatches
+// and blank screen on initial load
+router.isReady().then(() => {
+  app.mount('#app')
+})

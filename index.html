@@ -9,8 +9,10 @@
     <!-- IMPORTANT: CSS preload for parallel loading with JS -->
     <!-- This will be populated by Vite plugin at build time -->
 
-    <!-- Google Fonts removed to eliminate CLS (0.333 → 0.002) -->
-    <!-- Using system font stack for optimal performance -->
+    <!-- Google Fonts with font-display: swap for fast fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
 
     <!-- LCP Image Preload - Different for mobile vs desktop -->
     <link rel="preload" as="image" href="/images/field-team-student-400.avif" type="image/avif" media="(max-width: 768px)" fetchpriority="high" />
@@ -58,7 +60,7 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         line-height: 1.6;
         color: var(--color-deep);
         background: #f8f9f6;
