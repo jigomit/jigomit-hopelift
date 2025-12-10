@@ -1,9 +1,10 @@
-import harvestImage from '../assets/programs/harvest-basket.jpg'
-import womenImage from '../assets/programs/women-cooperative.jpg'
-import healthImage from '../assets/programs/health-initiative.jpg'
+// Testimonial illustrations (small SVGs, keep as imports)
 import testimonialAma from '../assets/illustrations/testimonial-ama.svg'
 import testimonialDaniela from '../assets/illustrations/testimonial-daniela.svg'
 import testimonialSamuel from '../assets/illustrations/testimonial-samuel.svg'
+
+// Program images (use string paths for OptimizedImage component)
+// These reference /images/ directory where AVIF/WebP versions are generated
 
 export const featureHighlights = [
   {
@@ -29,7 +30,7 @@ export const programs = [
     title: 'Food Distribution Network',
     description: 'Community-led food distribution centers providing fresh produce, nutritious meals, and pantry staples to families in need.',
     focus: ['Food Security', 'Nutrition'],
-    image: harvestImage,
+    image: '/images/harvest-basket.jpg',
     metric: '12,000+ families served weekly',
     fullDescription: 'Our Food Distribution Network connects local food banks, community pantries, and mobile distribution sites to ensure nutritious food reaches families facing food insecurity. We serve fresh produce, hot meals, and essential groceries to those who need it most.',
     objectives: [
@@ -51,7 +52,7 @@ export const programs = [
     title: 'Housing Assistance Program',
     description: 'Emergency shelter, rent assistance, and housing stability support for families facing homelessness or housing insecurity.',
     focus: ['Housing', 'Shelter'],
-    image: healthImage,
+    image: '/images/health-initiative.jpg',
     metric: '3,200+ families housed',
     fullDescription: 'Our Housing Assistance Program provides emergency shelter, rental assistance, utility support, and case management to help families maintain stable housing. We work with landlords, social services, and community partners to prevent homelessness and support housing stability.',
     objectives: [
@@ -73,7 +74,7 @@ export const programs = [
     title: 'Family Financial Support',
     description: 'Emergency financial assistance, utility support, and financial counseling to help families overcome economic hardship.',
     focus: ['Financial Aid', 'Family Support'],
-    image: womenImage,
+    image: '/images/women-cooperative.jpg',
     metric: '$1.8M in emergency aid distributed',
     fullDescription: 'Our Family Financial Support program provides emergency grants, utility assistance, and financial counseling to families facing economic crisis. We help cover essential expenses, prevent utility shutoffs, and provide financial literacy training to build long-term stability.',
     objectives: [

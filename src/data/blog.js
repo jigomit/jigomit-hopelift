@@ -1,9 +1,5 @@
-import harvestImage from '../assets/programs/harvest-basket.jpg'
-import womenImage from '../assets/programs/women-cooperative.jpg'
-import healthImage from '../assets/programs/health-initiative.jpg'
-import youthImage from '../assets/programs/future-youth.jpg'
-import livelihoodsImage from '../assets/programs/resilient-livelihoods.jpg'
-import waterImage from '../assets/programs/safe-water.jpg'
+// Blog post images (use string paths for OptimizedImage component)
+// These reference /images/ directory where AVIF/WebP versions are generated
 
 export const blogPosts = [
   {
@@ -16,7 +12,7 @@ export const blogPosts = [
     authorRole: 'Food Distribution Director',
     date: '2024-11-28',
     readTime: 7,
-    image: harvestImage,
+    image: '/images/harvest-basket.jpg',
     featured: true,
     content: `
       <p class="lead">Every week, our Food Distribution Network serves over 12,000 families across local communities, providing fresh produce, hot meals, and essential groceries to those facing food insecurity.</p>
@@ -79,7 +75,7 @@ export const blogPosts = [
     authorRole: 'Housing Services Coordinator',
     date: '2024-11-15',
     readTime: 6,
-    image: livelihoodsImage,
+    image: '/images/resilient-livelihoods.jpg',
     featured: false,
     content: `
       <p class="lead">Stable housing is the foundation of everything else. Without it, finding employment, maintaining health, and keeping children in school becomes nearly impossible. Our Housing Assistance Program helps over 3,200 families each year maintain safe, stable housing.</p>
@@ -156,7 +152,7 @@ export const blogPosts = [
     authorRole: 'Financial Services Director',
     date: '2024-10-22',
     readTime: 6,
-    image: womenImage,
+    image: '/images/women-cooperative.jpg',
     featured: false,
     content: `
       <p class="lead">A medical bill. A car repair. A temporary job loss. Small financial emergencies can spiral into major crises for families living paycheck to paycheck. Our Family Financial Support program provides emergency assistance and financial education to help over 3,800 families annually overcome hardship and build stability.</p>
@@ -254,7 +250,7 @@ export const blogPosts = [
     authorRole: 'Community Outreach Manager',
     date: '2024-12-05',
     readTime: 8,
-    image: waterImage,
+    image: '/images/safe-water.jpg',
     featured: false,
     content: `
       <p class="lead">The holidays should be a time of joy and celebration. But for families struggling with poverty, this season often brings added stress, anxiety, and impossible financial choices. Our Holiday Food Programs ensure every family can celebrate with dignity and abundance.</p>
@@ -418,7 +414,7 @@ export const blogPosts = [
     authorRole: 'Program Development Director',
     date: '2024-11-01',
     readTime: 9,
-    image: youthImage,
+    image: '/images/future-youth.jpg',
     featured: true,
     content: `
       <p class="lead">Traditional charity treats symptoms, not causes. A food box helps this week. Rent assistance helps this month. But what helps families escape poverty permanently? Integrated support that addresses multiple needs simultaneously.</p>
@@ -621,7 +617,7 @@ export const blogPosts = [
     authorRole: 'Housing Rights Advocate',
     date: '2024-10-05',
     readTime: 10,
-    image: healthImage,
+    image: '/images/health-initiative.jpg',
     featured: false,
     content: `
       <p class="lead">If you're reading this, you might be facing the most stressful situation imaginable: potential eviction and homelessness. You're not alone. Thousands of families face this crisis annually - and most can prevent eviction with the right information and resources. This guide will help you navigate the process and access assistance.</p>

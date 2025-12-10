@@ -24,7 +24,7 @@ const props = defineProps({
     default: true
   },
   // CSS class for styling
-  class: {
+  imgClass: {
     type: String,
     default: ''
   },
@@ -194,7 +194,7 @@ onMounted(() => {
         :decoding="decodingAttr"
         :fetchpriority="fetchPriorityAttr"
         :class="[
-          class,
+          imgClass,
           {
             'img-loaded': isLoaded,
             'img-error': hasError

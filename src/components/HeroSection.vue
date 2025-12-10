@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import OptimizedImage from './OptimizedImage.vue'
 
 const heroStats = [
   { label: 'Families nourished each week', value: '18,500+' },
@@ -11,20 +12,24 @@ const heroThemes = ['Community-led', 'Open data', 'Future-forward']
 
 const heroImages = [
   {
-    url: 'https://images.pexels.com/photos/4959222/pexels-photo-4959222.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=crop&q=85',
+    src: '/images/volunteers-meals.jpg',
     alt: 'Volunteers distributing hot meals to families',
+    priority: true, // LCP image
   },
   {
-    url: 'https://images.pexels.com/photos/6647119/pexels-photo-6647119.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=crop&q=85',
+    src: '/images/field-team-student.jpg',
     alt: 'HopeLift field team guiding young student in class',
+    priority: false,
   },
   {
-    url: 'https://i.pinimg.com/736x/95/c2/a8/95c2a8f77674d16e0a275d05277bcb2a.jpg',
+    src: '/images/agriculture-harvest.jpg',
     alt: 'Community agriculture support and harvest',
+    priority: false,
   },
   {
-    url: 'https://i.pinimg.com/1200x/0f/05/fa/0f05fabcf96b5c3de66e169f11a635f2.jpg',
+    src: '/images/health-workers-care.jpg',
     alt: 'Health workers providing medical care',
+    priority: false,
   },
 ]
 </script>
@@ -58,21 +63,17 @@ const heroImages = [
         </div>
       </div>
       <div class="hero-gallery">
-        <div
-          v-for="(image, index) in heroImages"
-          :key="image.url"
-          class="hero-gallery__card img-skeleton"
-        >
-          <img
-            :src="image.url"
-            :alt="image.alt"
-            width="800"
-            height="600"
-            :loading="index === 0 ? 'eager' : 'eager'"
-            :fetchpriority="index === 0 ? 'high' : 'auto'"
-            :decoding="index === 0 ? 'sync' : 'async'"
-          />
-        </div>
+        <OptimizedImage
+          v-for="image in heroImages"
+          :key="image.src"
+          :src="image.src"
+          :alt="image.alt"
+          :width="800"
+          :height="600"
+          :priority="image.priority"
+          :lazy="false"
+          img-class="hero-gallery__card"
+        />
         <div class="hero-badge">
           <p class="badge-eyebrow">HopeLift today</p>
           <strong>Food · Education · Health · Youth</strong>

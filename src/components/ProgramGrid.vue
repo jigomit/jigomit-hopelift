@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import OptimizedImage from './OptimizedImage.vue'
 
 const props = defineProps({
   programs: {
@@ -20,17 +21,15 @@ const props = defineProps({
       v-reveal
     >
       <article>
-        <div class="program-card__image img-skeleton">
-          <img
-            :src="program.image"
-            :alt="program.title"
-            width="600"
-            height="400"
-            :loading="index < 3 ? 'eager' : 'lazy'"
-            :fetchpriority="index < 3 ? 'high' : 'auto'"
-            :decoding="index < 3 ? 'async' : 'async'"
-          />
-        </div>
+        <OptimizedImage
+          :src="program.image"
+          :alt="program.title"
+          :width="600"
+          :height="400"
+          :lazy="index >= 3"
+          :priority="index < 3"
+          img-class="program-card__image"
+        />
         <div class="program-body">
           <div class="program-tags">
             <span v-for="tag in program.focus" :key="tag" class="tag">{{ tag }}</span>

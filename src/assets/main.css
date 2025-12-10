@@ -1402,6 +1402,8 @@ p {
     linear-gradient(135deg, #03140f, #062f21 60%, #0f4332);
   color: rgba(255, 255, 255, 0.92);
   padding: 4.5rem 0 2.5rem;
+  min-height: 450px;
+  contain: layout;
 }
 
 .footer-grid {
@@ -4372,7 +4374,9 @@ img {
 
 /* Reserve space for footer - prevents CLS */
 .footer {
-  min-height: 400px;
+  min-height: 450px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 450px;
 }
 
 /* Content visibility for better rendering performance */
