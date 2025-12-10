@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Contact and collaboration">
+  <defs>
+    <linearGradient id="contact-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef5ff" />
+      <stop offset="100%" stop-color="#e6f8f0" />
+    </linearGradient>
+    <linearGradient id="contact-chat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d8a6d" />
+      <stop offset="100%" stop-color="#30b08b" />
+    </linearGradient>
+    <linearGradient id="contact-highlight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6c979" />
+      <stop offset="100%" stop-color="#f48b3c" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#contact-bg)" />
+  <circle cx="260" cy="200" r="140" fill="#dfeeff" />
+  <circle cx="1400" cy="200" r="120" fill="#fef0d7" />
+  <path d="M0 760 C240 660 460 820 760 760 C1040 700 1320 860 1600 720 L1600 1000 L0 1000 Z" fill="#e7f5ed" />
+  <path d="M0 820 C240 760 480 860 760 800 C1040 740 1320 900 1600 760 L1600 1000 L0 1000 Z" fill="#ffffff" opacity="0.75" />
+  <rect x="260" y="260" width="420" height="460" rx="48" fill="#ffffff" stroke="#dfe8f3" stroke-width="6" />
+  <rect x="760" y="240" width="480" height="500" rx="56" fill="#ffffff" stroke="#d5eee4" stroke-width="6" />
+  <rect x="310" y="320" width="320" height="120" rx="34" fill="#f4fafc" />
+  <rect x="340" y="350" width="220" height="26" rx="13" fill="#1d8a6d" opacity="0.4" />
+  <rect x="310" y="470" width="360" height="200" rx="36" fill="#fef7ec" />
+  <rect x="350" y="500" width="280" height="30" rx="15" fill="#f48b3c" opacity="0.6" />
+  <rect x="350" y="540" width="200" height="22" rx="11" fill="#1d8a6d" opacity="0.3" />
+  <rect x="820" y="300" width="360" height="160" rx="40" fill="#f9fefc" />
+  <rect x="850" y="340" width="240" height="28" rx="14" fill="#1d8a6d" opacity="0.4" />
+  <path d="M840 520 L1140 520 C1190 520 1220 560 1190 600 L1120 690 C1090 728 1010 728 980 690 L910 600 C880 560 910 520 960 520 Z" fill="url(#contact-chat)" opacity="0.9" />
+  <circle cx="960" cy="560" r="40" fill="#ffffff" opacity="0.9" />
+  <circle cx="1030" cy="560" r="40" fill="#f48b3c" opacity="0.8" />
+  <circle cx="1100" cy="560" r="40" fill="#ffffff" opacity="0.9" />
+  <rect x="1180" y="520" width="140" height="140" rx="40" fill="#fefefe" opacity="0.9" />
+  <rect x="1210" y="560" width="80" height="20" rx="10" fill="#f48b3c" opacity="0.6" />
+  <circle cx="1280" cy="640" r="80" fill="#1d8a6d" opacity="0.15" />
+</svg>

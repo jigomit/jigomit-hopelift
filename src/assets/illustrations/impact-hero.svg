@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Impact dashboard visualization">
+  <defs>
+    <linearGradient id="impact-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4fbff" />
+      <stop offset="100%" stop-color="#e3f7f1" />
+    </linearGradient>
+    <linearGradient id="impact-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#24a392" />
+      <stop offset="100%" stop-color="#0f5b45" />
+    </linearGradient>
+    <linearGradient id="impact-orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9c86c" />
+      <stop offset="100%" stop-color="#f1893d" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#impact-bg)" />
+  <circle cx="220" cy="220" r="140" fill="#e1f1ff" />
+  <circle cx="1430" cy="220" r="120" fill="#f6e5c1" />
+  <path d="M0 760 C240 660 440 820 720 760 C960 700 1220 860 1600 720 L1600 1000 L0 1000 Z" fill="#e0f4ec" />
+  <path d="M0 820 C220 760 460 860 720 800 C960 740 1220 900 1600 760 L1600 1000 L0 1000 Z" fill="#ffffff" opacity="0.7" />
+  <rect x="260" y="260" width="540" height="460" rx="48" fill="#ffffff" stroke="#d4e5dd" stroke-width="6" />
+  <rect x="860" y="300" width="420" height="420" rx="54" fill="#ffffff" stroke="#d7e8f0" stroke-width="6" />
+  <polyline points="320,600 420,520 520,540 620,460 700,520" fill="none" stroke="#1d8a6d" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="420" cy="520" r="26" fill="#1d8a6d" />
+  <circle cx="620" cy="460" r="26" fill="#f1893d" />
+  <rect x="300" y="320" width="460" height="80" rx="36" fill="#f6fbf8" />
+  <rect x="330" y="346" width="240" height="28" rx="14" fill="#1d8a6d" opacity="0.4" />
+  <rect x="330" y="386" width="140" height="20" rx="10" fill="#f1893d" opacity="0.5" />
+  <path d="M920 560 A120 120 0 0 1 1110 420 L1110 560 Z" fill="#24a392" opacity="0.4" />
+  <path d="M1110 420 A120 120 0 0 1 1180 600 L1110 560 Z" fill="#f1893d" opacity="0.6" />
+  <path d="M1110 560 L1180 600 A120 120 0 0 1 920 560 Z" fill="#1d8a6d" opacity="0.25" />
+  <rect x="960" y="680" width="260" height="70" rx="30" fill="#fdf4e8" />
+  <rect x="990" y="700" width="140" height="24" rx="12" fill="#f1893d" />
+  <circle cx="1260" cy="560" r="60" fill="#24a392" opacity="0.15" />
+</svg>

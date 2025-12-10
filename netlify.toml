@@ -1,0 +1,89 @@
+# Netlify Configuration for Production Deployment
+
+[build]
+  # Build command
+  command = "npm run build"
+
+  # Publish directory (Vite outputs to 'dist' by default)
+  publish = "dist"
+
+  # Functions directory (if using Netlify Functions)
+  # functions = "netlify/functions"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "20"
+
+  # NPM version (optional)
+  NPM_VERSION = "10"
+
+# Production context
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+
+# Deploy Preview context
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "dist"
+
+# Branch deploy context
+[context.branch-deploy]
+  command = "npm run build"
+  publish = "dist"
+
+# Plugin configuration
+[[plugins]]
+  # Optimize images automatically
+  package = "@netlify/plugin-lighthouse"
+
+# Headers (also defined in public/_headers for redundancy)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.avif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects (also defined in public/_redirects)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optional: Force HTTPS redirect
+# [[redirects]]
+#   from = "http://hopelift.org/*"
+#   to = "https://hopelift.org/:splat"
+#   status = 301
+#   force = true
+
+# Optional: Redirect www to non-www
+# [[redirects]]
+#   from = "https://www.hopelift.org/*"
+#   to = "https://hopelift.org/:splat"
+#   status = 301
+#   force = true

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Donor support and relief supplies">
+  <defs>
+    <linearGradient id="donate-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff5ea" />
+      <stop offset="100%" stop-color="#eaf7f2" />
+    </linearGradient>
+    <linearGradient id="donate-teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#30b08b" />
+      <stop offset="100%" stop-color="#0f5b45" />
+    </linearGradient>
+    <linearGradient id="donate-heart" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f47b6b" />
+      <stop offset="100%" stop-color="#f8a165" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#donate-bg)" />
+  <circle cx="1400" cy="200" r="120" fill="#fde6cf" />
+  <circle cx="220" cy="200" r="140" fill="#e3f4ec" />
+  <path d="M0 760 C220 650 420 820 700 760 C960 700 1240 840 1600 700 L1600 1000 L0 1000 Z" fill="#f6fbf8" />
+  <path d="M0 820 C240 740 460 880 720 820 C960 760 1240 900 1600 760 L1600 1000 L0 1000 Z" fill="#e0f4ec" />
+  <rect x="260" y="260" width="440" height="460" rx="52" fill="#ffffff" stroke="#f6e2cd" stroke-width="6" />
+  <rect x="760" y="240" width="420" height="500" rx="56" fill="#ffffff" stroke="#dceee5" stroke-width="6" />
+  <rect x="360" y="320" width="240" height="120" rx="36" fill="#fef5ec" />
+  <rect x="390" y="350" width="160" height="28" rx="14" fill="#f47b6b" />
+  <rect x="360" y="480" width="280" height="200" rx="40" fill="#f6fbf8" />
+  <rect x="400" y="520" width="60" height="120" rx="16" fill="#0f5b45" opacity="0.5" />
+  <rect x="480" y="540" width="60" height="100" rx="16" fill="#30b08b" opacity="0.5" />
+  <rect x="560" y="500" width="60" height="140" rx="16" fill="#f8a165" opacity="0.6" />
+  <path d="M940 520 C940 450 1020 420 1050 470 C1080 420 1160 450 1160 520 C1160 640 1050 700 1050 700 C1050 700 940 640 940 520 Z" fill="url(#donate-heart)" />
+  <rect x="820" y="310" width="300" height="80" rx="36" fill="#f4fff9" />
+  <rect x="850" y="336" width="180" height="28" rx="14" fill="#0f5b45" opacity="0.4" />
+  <rect x="820" y="420" width="320" height="40" rx="20" fill="#fdf2e7" />
+  <rect x="840" y="430" width="160" height="20" rx="10" fill="#f8a165" />
+  <circle cx="1180" cy="640" r="110" fill="#1d8a6d" opacity="0.12" />
+  <circle cx="1260" cy="360" r="34" fill="#f47b6b" />
+</svg>

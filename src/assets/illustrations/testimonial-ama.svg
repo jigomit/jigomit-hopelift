@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Portrait of Ama Njeri">
+  <defs>
+    <linearGradient id="ama-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f2e8" />
+      <stop offset="100%" stop-color="#e6f5ef" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="160" fill="url(#ama-bg)" />
+  <circle cx="300" cy="260" r="120" fill="#1d8a6d" opacity="0.15" />
+  <circle cx="300" cy="260" r="100" fill="#30b08b" opacity="0.2" />
+  <path d="M220 280 Q300 340 380 280" stroke="#1d8a6d" stroke-width="12" stroke-linecap="round" fill="none" />
+  <circle cx="260" cy="240" r="12" fill="#1d8a6d" />
+  <circle cx="340" cy="240" r="12" fill="#1d8a6d" />
+  <path d="M200 440 C240 380 360 380 400 440 L400 520 L200 520 Z" fill="#1d8a6d" opacity="0.25" />
+  <rect x="220" y="140" width="160" height="70" rx="35" fill="#f48b3c" opacity="0.7" />
+</svg>

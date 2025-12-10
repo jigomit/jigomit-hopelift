@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Food distribution illustration">
+  <defs>
+    <linearGradient id="harvest-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef7ea" />
+      <stop offset="100%" stop-color="#e9f6ef" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#harvest-bg)" rx="40" />
+  <circle cx="1060" cy="120" r="90" fill="#fde2c4" />
+  <circle cx="180" cy="160" r="110" fill="#dff0ff" />
+  <path d="M0 520 C200 460 360 580 560 520 C760 460 960 600 1200 480 L1200 800 L0 800 Z" fill="#e0f2e7" />
+  <rect x="200" y="240" width="320" height="320" rx="40" fill="#ffffff" stroke="#f3dec6" stroke-width="4" />
+  <rect x="680" y="220" width="320" height="360" rx="44" fill="#ffffff" stroke="#d8ecdf" stroke-width="4" />
+  <rect x="240" y="280" width="200" height="60" rx="20" fill="#fff5eb" />
+  <rect x="260" y="300" width="140" height="20" rx="10" fill="#f18a3a" />
+  <path d="M250 440 Q320 360 390 440 T530 440" fill="none" stroke="#1d8a6d" stroke-width="16" stroke-linecap="round" />
+  <path d="M750 480 Q840 400 930 480 T1110 480" fill="none" stroke="#f18a3a" stroke-width="18" stroke-linecap="round" />
+  <rect x="720" y="300" width="140" height="90" rx="22" fill="#f3faf5" />
+  <rect x="880" y="300" width="80" height="120" rx="20" fill="#1d8a6d" opacity="0.5" />
+  <rect x="980" y="300" width="40" height="160" rx="18" fill="#f18a3a" opacity="0.7" />
+  <circle cx="360" cy="520" r="36" fill="#f18a3a" opacity="0.4" />
+  <circle cx="840" cy="360" r="30" fill="#1d8a6d" opacity="0.25" />
+</svg>

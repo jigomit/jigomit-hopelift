@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Community strategy workshop">
+  <defs>
+    <linearGradient id="about-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8efd7" />
+      <stop offset="100%" stop-color="#e0f3ea" />
+    </linearGradient>
+    <linearGradient id="about-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7c155" />
+      <stop offset="100%" stop-color="#f29e4c" />
+    </linearGradient>
+    <linearGradient id="about-leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ac497" />
+      <stop offset="100%" stop-color="#1d8a6d" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#about-gradient)" />
+  <circle cx="1340" cy="220" r="130" fill="url(#about-sun)" opacity="0.8" />
+  <path d="M0 720 C220 620 420 740 610 700 C860 640 1040 820 1600 660 L1600 1000 L0 1000 Z" fill="#e1f5eb" />
+  <path d="M0 780 C200 700 420 840 660 780 C900 720 1120 860 1600 720 L1600 1000 L0 1000 Z" fill="#fefefe" opacity="0.6" />
+  <rect x="220" y="320" width="240" height="380" rx="40" fill="#ffffff" stroke="#dfe9e3" stroke-width="6" />
+  <rect x="500" y="250" width="300" height="480" rx="48" fill="#ffffff" stroke="#e0f0e9" stroke-width="6" />
+  <rect x="860" y="280" width="360" height="420" rx="56" fill="#ffffff" stroke="#d4e6dd" stroke-width="6" />
+  <circle cx="620" cy="420" r="70" fill="#1d8a6d" opacity="0.12" />
+  <circle cx="1040" cy="430" r="90" fill="#f7c155" opacity="0.2" />
+  <path d="M280 580 L360 460 L420 520 L520 380 L640 520 L740 420 L880 600" fill="none" stroke="#1d8a6d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M1000 540 C1030 470 1100 452 1150 506 C1200 560 1170 670 1090 700 C1010 730 950 632 1000 540 Z" fill="url(#about-leaf)" opacity="0.8" />
+  <circle cx="420" cy="650" r="46" fill="#f29e4c" opacity="0.6" />
+  <circle cx="760" cy="360" r="32" fill="#4ac497" opacity="0.4" />
+  <circle cx="1360" cy="620" r="58" fill="#1d8a6d" opacity="0.15" />
+  <rect x="940" y="320" width="220" height="140" rx="28" fill="#ffffff" opacity="0.9" />
+  <rect x="980" y="350" width="140" height="22" rx="11" fill="#1d8a6d" opacity="0.4" />
+  <rect x="980" y="386" width="100" height="16" rx="8" fill="#f29e4c" opacity="0.6" />
+</svg>

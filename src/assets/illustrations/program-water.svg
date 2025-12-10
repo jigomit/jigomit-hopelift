@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Water infrastructure illustration">
+  <defs>
+    <linearGradient id="water-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e6f5ff" />
+      <stop offset="100%" stop-color="#e1f5f0" />
+    </linearGradient>
+    <linearGradient id="water-drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#52c1ff" />
+      <stop offset="100%" stop-color="#1d8a6d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#water-bg)" rx="40" />
+  <circle cx="1080" cy="140" r="100" fill="#d7ecff" />
+  <circle cx="200" cy="140" r="110" fill="#f0fbff" />
+  <path d="M0 520 C220 460 460 600 640 520 C860 440 1080 600 1200 480 L1200 800 L0 800 Z" fill="#dff3ec" />
+  <rect x="220" y="240" width="320" height="320" rx="42" fill="#ffffff" stroke="#e2f0ff" stroke-width="4" />
+  <rect x="660" y="240" width="360" height="320" rx="46" fill="#ffffff" stroke="#d6ede5" stroke-width="4" />
+  <rect x="260" y="280" width="220" height="80" rx="30" fill="#f4fbff" />
+  <rect x="290" y="310" width="150" height="24" rx="12" fill="#1d8a6d" opacity="0.4" />
+  <circle cx="380" cy="480" r="90" fill="#1d8a6d" opacity="0.12" />
+  <path d="M360 420 L360 520 L420 520" stroke="#1d8a6d" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="720" y="280" width="260" height="220" rx="48" fill="#fefefe" />
+  <path d="M850 310 C810 360 780 410 780 450 C780 510 828 560 870 600 C912 560 960 510 960 450 C960 410 930 360 890 310 Z" fill="url(#water-drop)" opacity="0.8" />
+  <rect x="700" y="540" width="320" height="60" rx="30" fill="#f1fbf8" />
+  <rect x="740" y="560" width="180" height="24" rx="12" fill="#1d8a6d" opacity="0.35" />
+</svg>

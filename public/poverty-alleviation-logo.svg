@@ -1,0 +1,138 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">HopeLift Foundation - Rising Together</title>
+  <defs>
+    <!-- Sunrise gradient (warm and hopeful) -->
+    <linearGradient id="sunrise-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9a3c" />
+      <stop offset="50%" stop-color="#f3c05c" />
+      <stop offset="100%" stop-color="#ffd98c" />
+    </linearGradient>
+
+    <!-- Green earth/growth gradient -->
+    <linearGradient id="earth-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0fbf82" />
+      <stop offset="100%" stop-color="#04664a" />
+    </linearGradient>
+
+    <!-- Figure gradient -->
+    <linearGradient id="figure-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#04664a" />
+      <stop offset="100%" stop-color="#0fbf82" />
+    </linearGradient>
+
+    <!-- Premium shadow filter -->
+    <filter id="premium-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="0" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle (earth/ground) -->
+  <circle cx="60" cy="60" r="56" fill="url(#earth-gradient)" />
+
+  <!-- Rising Sun (large, bold, inspiring) -->
+  <g filter="url(#glow)">
+    <!-- Sun semi-circle -->
+    <path d="M 15 75 Q 15 35 60 20 Q 105 35 105 75 Z"
+          fill="url(#sunrise-gradient)"
+          opacity="0.95" />
+
+    <!-- Sun rays (8 rays for visual impact) -->
+    <g opacity="0.85">
+      <path d="M 60 25 L 60 15" stroke="#ffd98c" stroke-width="3" stroke-linecap="round" />
+      <path d="M 75 30 L 80 22" stroke="#ffd98c" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 45 30 L 40 22" stroke="#ffd98c" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 88 42 L 95 37" stroke="#ffd98c" stroke-width="2" stroke-linecap="round" />
+      <path d="M 32 42 L 25 37" stroke="#ffd98c" stroke-width="2" stroke-linecap="round" />
+      <path d="M 98 58 L 106 56" stroke="#f3c05c" stroke-width="2" stroke-linecap="round" />
+      <path d="M 22 58 L 14 56" stroke="#f3c05c" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- Inner sun glow -->
+    <circle cx="60" cy="45" r="18" fill="#ffffff" opacity="0.3" />
+  </g>
+
+  <!-- Three community figures holding hands (bold silhouettes) -->
+  <g filter="url(#premium-shadow)">
+
+    <!-- Left figure -->
+    <g transform="translate(35, 65)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="6" fill="url(#figure-gradient)" />
+      <!-- Body -->
+      <ellipse cx="0" cy="12" rx="7" ry="10" fill="url(#figure-gradient)" />
+      <!-- Left arm extended -->
+      <path d="M -7 8 Q -12 10 -15 8" stroke="url(#figure-gradient)" stroke-width="4" stroke-linecap="round" fill="none" />
+      <!-- Right arm reaching to center figure -->
+      <path d="M 7 8 Q 12 6 15 8" stroke="url(#figure-gradient)" stroke-width="4" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Center figure (slightly taller - being lifted/leading) -->
+    <g transform="translate(60, 60)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="7" fill="#ffffff" />
+      <!-- Body -->
+      <ellipse cx="0" cy="14" rx="8" ry="12" fill="#ffffff" />
+      <!-- Arms extended to both sides -->
+      <path d="M -8 10 Q -14 8 -18 10" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" fill="none" />
+      <path d="M 8 10 Q 14 8 18 10" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" fill="none" />
+      <!-- Raised gesture (hope) -->
+      <circle cx="0" cy="-2" r="2" fill="#ffd98c" opacity="0.9" />
+    </g>
+
+    <!-- Right figure -->
+    <g transform="translate(85, 65)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="6" fill="url(#figure-gradient)" />
+      <!-- Body -->
+      <ellipse cx="0" cy="12" rx="7" ry="10" fill="url(#figure-gradient)" />
+      <!-- Left arm reaching to center figure -->
+      <path d="M -7 8 Q -12 6 -15 8" stroke="url(#figure-gradient)" stroke-width="4" stroke-linecap="round" fill="none" />
+      <!-- Right arm extended -->
+      <path d="M 7 8 Q 12 10 15 8" stroke="url(#figure-gradient)" stroke-width="4" stroke-linecap="round" fill="none" />
+    </g>
+  </g>
+
+  <!-- Unity circle/connection (subtle) -->
+  <circle cx="60" cy="70" r="32" stroke="#7ff0c8" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4,4" />
+
+  <!-- Ground line (foundation) -->
+  <path d="M 20 85 L 100 85"
+        stroke="url(#earth-gradient)"
+        stroke-width="4"
+        stroke-linecap="round"
+        opacity="0.7" />
+
+  <!-- Growth sprouts (small plants emerging) -->
+  <g opacity="0.8">
+    <circle cx="25" cy="84" r="2" fill="#22d18d" />
+    <path d="M 25 84 L 25 78 L 23 80 M 25 78 L 27 80" stroke="#22d18d" stroke-width="1.5" fill="none" stroke-linecap="round" />
+
+    <circle cx="95" cy="84" r="2" fill="#22d18d" />
+    <path d="M 95 84 L 95 78 L 93 80 M 95 78 L 97 80" stroke="#22d18d" stroke-width="1.5" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Sparkle accents (hope and inspiration) -->
+  <g opacity="0.75">
+    <circle cx="40" cy="35" r="2.5" fill="#ffffff" filter="url(#glow)" />
+    <circle cx="80" cy="35" r="2.5" fill="#ffffff" filter="url(#glow)" />
+    <circle cx="70" cy="25" r="1.8" fill="#ffffff" />
+    <circle cx="50" cy="25" r="1.8" fill="#ffffff" />
+  </g>
+</svg>

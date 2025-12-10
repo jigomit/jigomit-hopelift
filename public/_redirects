@@ -1,0 +1,11 @@
+# Netlify Redirects for SPA (Single Page Application)
+
+# Redirect all routes to index.html for client-side routing
+# This ensures Vue Router handles all navigation
+/*    /index.html   200
+
+# Optional: Redirect www to non-www (uncomment if needed)
+# https://www.hopelift.org/*  https://hopelift.org/:splat  301!
+
+# Optional: Force HTTPS (uncomment if needed)
+# http://hopelift.org/*  https://hopelift.org/:splat  301!

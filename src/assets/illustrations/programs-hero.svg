@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Field program collaboration">
+  <defs>
+    <linearGradient id="program-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef8f1" />
+      <stop offset="100%" stop-color="#e4f0fd" />
+    </linearGradient>
+    <linearGradient id="program-chart" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d8a6d" />
+      <stop offset="100%" stop-color="#0f5b45" />
+    </linearGradient>
+    <linearGradient id="program-amber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f7c155" />
+      <stop offset="100%" stop-color="#f29e4c" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#program-bg)" />
+  <circle cx="250" cy="220" r="140" fill="#f2dfc1" opacity="0.8" />
+  <circle cx="1430" cy="180" r="110" fill="#cce3ff" opacity="0.7" />
+  <path d="M0 720 C220 640 400 740 640 700 C940 650 1180 820 1600 660 L1600 1000 L0 1000 Z" fill="#e3efe6" />
+  <path d="M0 780 C220 720 460 820 700 780 C940 740 1180 880 1600 740 L1600 1000 L0 1000 Z" fill="#ffffff" opacity="0.7" />
+  <rect x="260" y="280" width="360" height="420" rx="48" fill="#ffffff" stroke="#e1ebe6" stroke-width="6" />
+  <rect x="660" y="240" width="360" height="460" rx="48" fill="#ffffff" stroke="#d7e6ff" stroke-width="6" />
+  <rect x="1060" y="300" width="280" height="360" rx="52" fill="#ffffff" stroke="#d9e4db" stroke-width="6" />
+  <rect x="310" y="520" width="100" height="160" rx="24" fill="#1d8a6d" opacity="0.75" />
+  <rect x="430" y="460" width="100" height="220" rx="24" fill="#0f5b45" opacity="0.8" />
+  <rect x="550" y="420" width="100" height="260" rx="24" fill="#30b08b" opacity="0.8" />
+  <rect x="710" y="420" width="260" height="60" rx="30" fill="#fef4e2" />
+  <rect x="740" y="440" width="200" height="20" rx="10" fill="#f29e4c" />
+  <rect x="710" y="520" width="120" height="160" rx="26" fill="#1d8a6d" opacity="0.15" />
+  <circle cx="1170" cy="420" r="70" fill="#f7c155" opacity="0.3" />
+  <circle cx="1200" cy="610" r="110" fill="#1d8a6d" opacity="0.12" />
+  <path d="M280 340 L540 340" stroke="#1d8a6d" stroke-width="10" stroke-linecap="round" />
+  <path d="M280 380 L500 380" stroke="#f29e4c" stroke-width="10" stroke-linecap="round" />
+  <circle cx="1230" cy="320" r="26" fill="#1d8a6d" />
+  <circle cx="1300" cy="350" r="16" fill="#f29e4c" />
+  <rect x="1110" y="520" width="160" height="140" rx="28" fill="#fefefe" opacity="0.85" />
+  <rect x="1135" y="550" width="110" height="20" rx="10" fill="#1d8a6d" opacity="0.4" />
+</svg>
