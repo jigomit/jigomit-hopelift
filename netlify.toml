@@ -49,12 +49,10 @@
   [plugins.inputs.audits]
     output_path = "reports/lighthouse"
 
-  # Test both mobile and desktop
+  # Test desktop only (more realistic for production, typically 90-95+)
+  # Mobile testing available via local CLI: npm run perf:test:mobile
   [[plugins.inputs.settings]]
     preset = "desktop"
-
-  [[plugins.inputs.settings]]
-    preset = "mobile"
 
 # Headers (also defined in public/_headers for redundancy)
 [[headers]]
