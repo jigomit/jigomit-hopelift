@@ -113,7 +113,9 @@ const handleLoad = () => {
 // Handle image error
 const handleError = () => {
   hasError.value = true
-  console.error(`Failed to load image: ${props.src}`)
+  if (import.meta.env.DEV) {
+    console.error(`Failed to load image: ${props.src}`)
+  }
 }
 
 // Intersection Observer for lazy loading (fallback)

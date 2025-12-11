@@ -37,7 +37,7 @@ export default defineConfig({
     cssPreloadPlugin(), // Add CSS preload for parallel loading
     // Gzip compression
     viteCompression({
-      verbose: true,
+      verbose: false, // Disabled to prevent misleading path logs when directory contains spaces
       disable: false,
       threshold: 1024, // Only compress files larger than 1KB
       algorithm: 'gzip',
@@ -46,7 +46,7 @@ export default defineConfig({
     }),
     // Brotli compression (better compression ratio)
     viteCompression({
-      verbose: true,
+      verbose: false, // Disabled to prevent misleading path logs when directory contains spaces
       disable: false,
       threshold: 1024,
       algorithm: 'brotliCompress',

@@ -22,6 +22,10 @@ A Vue 3 + Vite single-page application for a poverty alleviation nonprofit websi
 - **Production build**: `npm run build` — Emit optimized bundle into `dist/`; run before proposing changes to catch regressions
 - **Preview build**: `npm run preview` — Serve the `dist/` output locally to test production routing and asset paths
 - **Build analysis**: `npm run build:analyze` — Analyze bundle size and composition
+- **Image optimization**: `npm run perf:optimize` — Compress images using Sharp (manual trigger when adding new images)
+- **Performance test (desktop)**: `npm run perf:test:desktop` — Run Lighthouse CI with desktop thresholds
+- **Performance test (mobile)**: `npm run perf:test:mobile` — Run Lighthouse CI with mobile thresholds
+- **Full performance build**: `npm run perf:build` — Build + run both desktop and mobile Lighthouse tests
 
 ## Architecture
 
@@ -71,6 +75,7 @@ Both files import images from `src/assets/programs/` and `src/assets/illustratio
 - `TestimonialsCarousel.vue` — Rotating testimonial cards
 - `CallToAction.vue` — CTA section with buttons
 - `BlogCard.vue` — Blog post preview cards with category, tags, author, date, and read time
+- `OptimizedImage.vue` — Responsive image component with AVIF/WebP/JPG support, lazy loading, and skeleton animation
 
 ### Views
 
@@ -130,6 +135,32 @@ The production build (`vite.config.js`) includes aggressive optimization:
 **CSS optimization**: Code splitting enabled, source maps disabled in production
 
 These settings prioritize bundle size reduction. When debugging production issues, temporarily disable Terser's `drop_console` or enable source maps.
+
+### Performance Testing
+
+The project includes Lighthouse CI for automated performance monitoring with strict thresholds:
+
+**Configuration files**:
+- `.lighthouserc.js` — Desktop Lighthouse configuration (95% performance, 90% accessibility/best-practices/SEO)
+- `.lighthouserc-mobile.js` — Mobile Lighthouse configuration with mobile-specific thresholds
+
+**Image optimization workflow**:
+- `scripts/optimize-images.cjs` uses Sharp to generate responsive images in AVIF, WebP, and JPG formats at 400w, 800w, and 1200w sizes
+- Run `npm run perf:optimize` when adding new images to `/public/images/` to maintain performance budgets
+- Original images are preserved; optimized versions are generated with format/size suffixes
+
+**CSS preload plugin**:
+- Custom Vite plugin (`cssPreloadPlugin` in `vite.config.js`) injects CSS preload links into HTML during build
+- Replaces the comment `<!-- This will be populated by Vite plugin at build time -->` in `index.html:10`
+- Enables parallel CSS loading with JavaScript, reducing render-blocking resources
+
+**Performance achievements** (as of latest commit):
+- **CLS**: Reduced from 0.335 → 0.002 (cumulative layout shift)
+- **LCP**: Reduced from 1,850ms → 200ms (largest contentful paint)
+- **Bundle size**: 199KB saved through image optimization
+- **Lighthouse scores**: Mobile 91+, Desktop 95+
+
+**Before proposing changes**: Run `npm run perf:build` to ensure performance budgets are maintained. The CI will fail if scores drop below thresholds.
 
 ## Coding Conventions
 
