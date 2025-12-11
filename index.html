@@ -9,10 +9,9 @@
     <!-- IMPORTANT: CSS preload for parallel loading with JS -->
     <!-- This will be populated by Vite plugin at build time -->
 
-    <!-- Google Fonts with font-display: swap for fast fallback -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <!-- Self-hosted font preloads for optimal performance -->
+    <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- LCP Image Preload - Different for mobile vs desktop -->
     <link rel="preload" as="image" href="/images/field-team-student-400.avif" type="image/avif" media="(max-width: 768px)" fetchpriority="high" />
@@ -150,6 +149,44 @@
       /* Image aspect-ratio support for CLS prevention */
       img {
         height: auto;
+      }
+
+      /* Hero critical styles - prevent render delay */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 600px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+        text-align: left;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin: 0 0 1.25rem;
+        font-family: 'Sora', 'Inter', system-ui, -apple-system, sans-serif;
+        color: #0b1a14;
+        font-weight: 700;
+      }
+
+      .hero-eyebrow {
+        color: #a855f7;
+        text-transform: uppercase;
+        letter-spacing: 0.35rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.7;
+        color: #5f6c7b;
       }
     </style>
   </head>
