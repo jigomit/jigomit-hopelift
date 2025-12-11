@@ -52,7 +52,7 @@ export const programs = [
     title: 'Housing Assistance Program',
     description: 'Emergency shelter, rent assistance, and housing stability support for families facing homelessness or housing insecurity.',
     focus: ['Housing', 'Shelter'],
-    image: '/images/health-initiative.jpg',
+    image: '/images/housing-assistance.jpg',
     metric: '3,200+ families housed',
     fullDescription: 'Our Housing Assistance Program provides emergency shelter, rental assistance, utility support, and case management to help families maintain stable housing. We work with landlords, social services, and community partners to prevent homelessness and support housing stability.',
     objectives: [
@@ -90,6 +90,94 @@ export const programs = [
       financialCounselingSessions: '5,600'
     },
     locations: ['Local Communities', 'Urban Centers', 'Rural Areas'],
+  },
+  {
+    slug: 'mobile-food-pantry',
+    title: 'Mobile Food Pantry Program',
+    description: 'Bringing fresh groceries and prepared meals directly to underserved rural communities and neighborhoods with limited access to food resources.',
+    focus: ['Food Security', 'Mobile Services'],
+    image: '/images/mobile-food-pantry.jpg',
+    metric: '2,800+ families reached monthly',
+    fullDescription: 'Our Mobile Food Pantry Program operates a fleet of refrigerated trucks that travel to rural areas, senior living facilities, and underserved neighborhoods where traditional food pantries are inaccessible. Each mobile pantry provides fresh produce, proteins, dairy products, and pantry staples, ensuring that transportation barriers never prevent families from accessing nutritious food.',
+    objectives: [
+      'Expand mobile routes to cover 15 additional rural communities by 2025',
+      'Serve 3,500 families monthly through mobile distributions',
+      'Partner with local organizations to identify high-need areas',
+      'Reduce food deserts by providing consistent weekly service'
+    ],
+    impact: {
+      familiesReached: '2,800+ monthly',
+      mobileSitesActive: '28 locations',
+      poundsDistributed: '185,000 lbs/month',
+      averageDistance: '45 miles per route'
+    },
+    locations: ['Rural Communities', 'Remote Areas', 'Senior Facilities'],
+  },
+  {
+    slug: 'transitional-housing',
+    title: 'Transitional Housing Program',
+    description: 'Safe, temporary housing combined with case management and support services to help families transition from homelessness to permanent housing.',
+    focus: ['Housing', 'Case Management'],
+    image: '/images/transitional-housing.jpg',
+    metric: '180 families in transitional housing',
+    fullDescription: 'Our Transitional Housing Program provides safe, furnished apartments for families experiencing homelessness while they work toward permanent housing stability. Each family receives intensive case management, employment support, financial counseling, and life skills training. The program typically lasts 6-18 months, giving families time to build income, savings, and the skills needed for long-term housing success.',
+    objectives: [
+      'Maintain 200 transitional housing units by 2025',
+      'Achieve 90% transition rate to permanent housing',
+      'Provide wraparound services including childcare and transportation',
+      'Connect families with education and employment opportunities'
+    ],
+    impact: {
+      familiesHoused: '180 currently',
+      permanentHousingRate: '85%',
+      averageStayLength: '11 months',
+      childrenSupported: '340+'
+    },
+    locations: ['Urban Centers', 'Suburban Areas', 'Local Communities'],
+  },
+  {
+    slug: 'home-repair-weatherization',
+    title: 'Home Repair & Weatherization',
+    description: 'Emergency home repairs and energy efficiency improvements for low-income homeowners, preventing displacement and reducing utility costs.',
+    focus: ['Housing Stability', 'Home Repair'],
+    image: '/images/home-repair.jpg',
+    metric: '450 homes repaired annually',
+    fullDescription: 'Our Home Repair & Weatherization program helps low-income homeowners maintain safe, energy-efficient homes through emergency repairs and weatherization services. We address critical safety issues (roof repairs, plumbing, heating systems), improve energy efficiency (insulation, windows, HVAC upgrades), and make accessibility modifications for seniors and people with disabilities. This prevents displacement and keeps families in their homes.',
+    objectives: [
+      'Complete 600 home repairs and weatherization projects annually by 2025',
+      'Reduce average utility costs by 30% for participating households',
+      'Prioritize repairs for seniors, families with children, and people with disabilities',
+      'Train and employ local residents in construction trades'
+    ],
+    impact: {
+      homesRepaired: '450 annually',
+      averageUtilitySavings: '$840/year',
+      emergencyRepairs: '280 completed',
+      localJobsCreated: '35 positions'
+    },
+    locations: ['Local Communities', 'Urban Centers', 'Rural Areas'],
+  },
+  {
+    slug: 'job-training-placement',
+    title: 'Job Training & Placement',
+    description: 'Skills training, industry certifications, and job placement assistance to help unemployed and underemployed individuals secure stable, living-wage employment.',
+    focus: ['Employment', 'Skills Training'],
+    image: '/images/future-youth.jpg',
+    metric: '1,240 jobs secured in 2024',
+    fullDescription: 'Our Job Training & Placement program provides comprehensive employment support including skills assessment, vocational training, industry certifications, resume development, interview coaching, and direct connections to hiring employers. We partner with local businesses to understand workforce needs and design training programs that lead directly to employment. Participants receive support for up to one year after job placement to ensure retention and advancement.',
+    objectives: [
+      'Place 1,500 participants in living-wage jobs annually by 2025',
+      'Achieve 80% job retention rate at 12 months',
+      'Expand training programs to include healthcare, IT, and skilled trades',
+      'Partner with 100+ employers committed to hiring program graduates'
+    ],
+    impact: {
+      participantsTrained: '1,680 annually',
+      jobsSecured: '1,240 placements',
+      averageWageIncrease: '$6.50/hour',
+      employerPartners: '85 active'
+    },
+    locations: ['Urban Centers', 'Local Communities', 'Suburban Areas'],
   },
 ]
 

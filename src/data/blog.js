@@ -26,9 +26,9 @@ export const blogPosts = [
       <p>We established a network of distribution sites throughout underserved neighborhoods. Here's how it works:</p>
 
       <ul>
-        <li><strong>Weekly Food Distributions:</strong> Fresh produce, proteins, dairy, and pantry staples available twice weekly at convenient locations</li>
+        <li><strong>Weekly Food Distributions:</strong> Fresh produce, proteins, dairy, and pantry staples available twice weekly at convenient locations through our Food Distribution Network</li>
         <li><strong>Hot Meal Programs:</strong> Prepared meals served to families and individuals experiencing homelessness or housing instability</li>
-        <li><strong>Mobile Pantries:</strong> Food delivered directly to rural communities and seniors with transportation barriers</li>
+        <li><strong>Mobile Food Pantry Program:</strong> Our fleet of refrigerated trucks delivers food directly to rural communities, remote areas, and senior facilities where traditional pantries are inaccessible, reaching 2,800+ families monthly</li>
         <li><strong>Nutrition Education:</strong> Cooking classes and nutrition workshops help families make healthy meals on limited budgets</li>
       </ul>
 
@@ -85,12 +85,14 @@ export const blogPosts = [
 
       <p>"After my apartment flooded, we had nowhere to go," says James Wilson, a construction worker and father of two. "Hotels were too expensive. We couldn't afford first and last month's rent on a new place. I was terrified my kids would end up in a shelter."</p>
 
-      <h2>Rapid Response Housing Support</h2>
-      <p>Our Housing Assistance Program provides immediate help when families face housing emergencies:</p>
+      <h2>Comprehensive Housing Support</h2>
+      <p>Our housing programs provide a full continuum of support from crisis to stability:</p>
 
       <ul>
         <li><strong>Emergency Shelter:</strong> Same-day placement in safe temporary housing for families facing immediate homelessness</li>
+        <li><strong>Transitional Housing Program:</strong> Furnished apartments with intensive case management (6-18 months) helping 180 families transition from homelessness to permanent housing with an 85% success rate</li>
         <li><strong>Rental Assistance:</strong> Short-term rent and utility support (up to 6 months) to prevent eviction</li>
+        <li><strong>Home Repair & Weatherization:</strong> Emergency repairs and energy efficiency improvements for 450+ low-income homeowners annually, preventing displacement and reducing utility costs by $840/year on average</li>
         <li><strong>Security Deposit Help:</strong> First and last month's rent assistance for families moving into stable housing</li>
         <li><strong>Case Management:</strong> Personalized support to address barriers and connect families with resources</li>
         <li><strong>Landlord Mediation:</strong> Work with property owners to resolve conflicts and prevent evictions</li>
@@ -163,14 +165,14 @@ export const blogPosts = [
       <p>"I was behind on my electric bill after missing work due to illness," recalls Sarah Chen, a single mother. "Winter was coming and I couldn't afford the shutoff. I was terrified my kids would freeze."</p>
 
       <h2>Immediate Relief, Lasting Solutions</h2>
-      <p>Our Financial Support program provides both emergency help and tools for long-term stability:</p>
+      <p>Our Financial Support programs provide both emergency help and tools for long-term economic stability:</p>
 
       <ul>
         <li><strong>Emergency Grants:</strong> One-time financial assistance for rent, utilities, medical bills, or other crisis expenses</li>
         <li><strong>Utility Assistance:</strong> Payment help to prevent water, electric, gas, or internet shutoff</li>
         <li><strong>Financial Counseling:</strong> One-on-one budgeting support and financial literacy training</li>
         <li><strong>Benefits Navigation:</strong> Help accessing SNAP, Medicaid, unemployment, and other public benefits</li>
-        <li><strong>Employment Resources:</strong> Connections to job training, resume help, and hiring partners</li>
+        <li><strong>Job Training & Placement Program:</strong> Comprehensive vocational training, industry certifications, and direct job placement with partner employers - we've helped 1,240 participants secure living-wage jobs in 2024 with an average $6.50/hour wage increase</li>
       </ul>
 
       <h2>Program Impact</h2>

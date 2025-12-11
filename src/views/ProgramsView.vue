@@ -8,10 +8,16 @@ import { useSEO, generateBreadcrumbSchema } from '../composables/useSEO'
 // SEO Configuration with Long-Tail Keywords
 useSEO({
   title: 'Programs',
-  description: 'Three core poverty alleviation programs: Food Distribution Network providing groceries and meals to 12,000+ families weekly. Housing Assistance Program preventing eviction for 3,200+ families annually. Family Financial Support offering emergency grants, utility help, and financial counseling.',
+  description: 'Seven comprehensive poverty alleviation programs: food distribution network, mobile food pantries, housing assistance, transitional housing, home repairs and weatherization, job training and placement, plus emergency financial support serving families in need.',
   keywords: [
     'food distribution programs for families',
+    'mobile food pantry services',
     'housing assistance programs near me',
+    'transitional housing for homeless families',
+    'home repair assistance low income',
+    'weatherization programs for low income',
+    'job training placement programs',
+    'vocational training and employment',
     'financial support programs for low income',
     'emergency food pantry services',
     'rental assistance eviction prevention',
@@ -23,7 +29,11 @@ useSEO({
     'community food distribution centers',
     'emergency housing support services',
     'family emergency financial assistance',
-    'nonprofit poverty alleviation programs'
+    'nonprofit poverty alleviation programs',
+    'homeless to housing programs',
+    'energy efficiency assistance programs',
+    'living wage job placement',
+    'skills training for employment'
   ],
   url: '/programs',
   type: 'website',
